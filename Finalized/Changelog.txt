@@ -5,10 +5,11 @@ Style:
 	Use: + to represent additions, - to represent deletions, * to represent changes to existing items
 
 Version 0.0.1 - Initial Version - Committed by: Sean Moss - 3/14/13
-	+ Basic TileEngine class, made by calling a constructor, then the Initialize method. Still lacks a way to draw and update the engine and tiles.
-	+ Simple tile class, can be extended to create a custom tile, or a new instance of Tile can be initialized. Tiles are automatically added
-		to the list of added tiles in the engine.
-	+ Texture Loading, works by loading a texture from the texture path and file name (defaults to tilename.xnb). The location of the file is
-		controlled by overrideable functions.
+	+ Basic TileEngine class, made by calling a constructor, then the Initialize method. Still lacks a way to 
+		draw and update the engine and tiles.
+	+ Simple tile class, can be extended to create a custom tile, or a new instance of Tile can be initialized. 
+		Tiles are automatically added to the list of added tiles in the engine.
+	+ Texture Loading, works by loading a texture from the texture path and file name (defaults to tilename.xnb).
+		The location of the file is controlled by overrideable functions.
 	+ Tile Directory, that keeps tile ids and names from being repeated.
 	+ Simple implementation of Tiles that represent liquids.
