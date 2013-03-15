@@ -46,7 +46,7 @@ namespace RMTileEngine.World
 		{
 			//Check for id conflicts
 			if (TileDirectory.idDictionary.ContainsKey(id))
-				throw new Exception(String.Format("The id ({0}) is already assigned to another tile ({1}). You cannot reuse ids.",
+				throw new RMTEException(String.Format("The id ({0}) is already assigned to another tile ({1}). You cannot reuse ids.",
 					id, TileDirectory.idDictionary[id]));
 			else
 			{
@@ -56,7 +56,7 @@ namespace RMTileEngine.World
 
 			//Check for name conflicts
 			if (TileDirectory.nameDictionary.ContainsKey(name))
-				throw new Exception(String.Format("The name ({0}) is already assigned to another tile ({1}). You cannot reuse names.",
+				throw new RMTEException(String.Format("The name ({0}) is already assigned to another tile ({1}). You cannot reuse names.",
 					name, TileDirectory.nameDictionary[name]));
 			else
 			{
