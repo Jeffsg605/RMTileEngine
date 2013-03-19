@@ -44,14 +44,17 @@ namespace RMTileEngine.World
 		/// <param name="name">The unique name of this tile.</param>
 		public Tile(int id, string name)
 		{
-			//Check for id conflicts
-			if (TileDirectory.idDictionary.ContainsKey(id))
-				throw new RMTEException(String.Format("The id ({0}) is already assigned to another tile ({1}). You cannot reuse ids.",
-					id, TileDirectory.idDictionary[id]));
-			else
+			if (TileDirectory.idDictionary != null)
 			{
-				this.ID = id;
-				TileDirectory.idDictionary.Add(id, this);
+				//Check for id conflicts
+				if (TileDirectory.idDictionary.ContainsKey(id))
+					throw new RMTEException(String.Format("The id ({0}) is already assigned to another tile ({1}). You cannot reuse ids.",
+						id, TileDirectory.idDictionary[id]));
+				else
+				{
+					this.ID = id;
+					TileDirectory.idDictionary.Add(id, this);
+				} 
 			}
 
 			//Check for name conflicts
@@ -65,6 +68,7 @@ namespace RMTileEngine.World
 			}
 
 			TileDirectory.AddTile(this);
+			TextureLibrary.AddTextureForTile(this);
 		}
 
 		/// <summary>

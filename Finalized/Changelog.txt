@@ -13,3 +13,7 @@ Version 0.0.1 - Initial Version - Committed by: Sean Moss - 3/14/13
 		The location of the file is controlled by overrideable functions.
 	+ Tile Directory, that keeps tile ids and names from being repeated.
 	+ Simple implementation of Tiles that represent liquids.
+	
+Version 0.0.2 - Committed by: Sean Moss - 3/19/13
+	* Changed the assembly references to work properly with Monogame.
+	* Changed AssemblyInfo.cs to reflect accurate information.

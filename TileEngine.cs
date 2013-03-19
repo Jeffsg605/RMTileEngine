@@ -4,7 +4,6 @@ using System.Linq;
 
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Content;
 
 using RMTileEngine.World;
 
@@ -53,11 +52,14 @@ namespace RMTileEngine
 		/// The path to the folder that contains the tile textures.
 		/// </summary>
 		public string TexturePath = "";
-
 		/// <summary>
 		/// If instance of the tileengine has been initialized.
 		/// </summary>
-		private bool initialized = false;
+		public bool Initialized
+		{
+			get;
+			private set;
+		}
 
 		/// <summary>
 		/// Constructor only checks to make sure that and instance doesn't already exist. All of the actual creation and initialization
@@ -83,7 +85,9 @@ namespace RMTileEngine
 			this.SavePath = savePath;
 			this.TexturePath = texturePath;
 
-			this.initialized = true;
+			TextureLibrary.Init(this.Game.Content, texturePath);
+
+			this.Initialized = true;
 		}
 
 		/// <summary>
@@ -124,7 +128,7 @@ namespace RMTileEngine
 
 		private void checkIfInitialized()
 		{
-			if (!this.initialized)
+			if (!this.Initialized)
 				throw new RMTEException("You cannot modify the TileEngine before it is initialized! Initialize the engine first by calling .Initialize()");
 		}
 	}

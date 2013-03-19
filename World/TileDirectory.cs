@@ -13,7 +13,7 @@ namespace RMTileEngine.World
 		/// <summary>
 		/// List of all added tiles.
 		/// </summary>
-		private static List<Tile> AddedTiles;
+		private static List<Tile> AddedTiles = new List<Tile>();
 
 		public static void AddTile(Tile t)
 		{
@@ -29,9 +29,9 @@ namespace RMTileEngine.World
 
 		static TileDirectory()
 		{
-			AddedTiles = new List<Tile>();
+			//Empty = new Tile(0, "Empty");
 
-			Empty = new Tile(0, "Empty");
+			//AddedTiles.Add(Empty);
 		}
 
 		//Dictionary of all Tiles and their ids
